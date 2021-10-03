@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Code Editor</title>
+  <meta name="description" content="This is an online code editor for html css and javascript. ">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Naem azam">
+  <meta name="keywords" content="Live code editor, online code editor, live html editor, live css editor, live javascript editor">
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <div class="header-wrap">
+    <h1>Live Code Editor</h1>
+    <h4>Compile HTML, CSS and JavaScript on the web</h4>
+  </div>
+  <div id="ide-parent">
+    <div id="button-wrapper">
+      <button onclick="switchPanel(0)">HTML</button>
+      <button onclick="switchPanel(1)">CSS</button>
+      <button onclick="switchPanel(2)">js</button>
+      <button onclick="runEdit(3)">Result</button>
+    </div>
+    <div id="ide-container">
+      <div class="panel-wrapper">
+        <div id="html">
+&lt;!--predefined html, but editable--&gt;
+
+
+&lt;div id="vcard"&gt;
+&lt;div id="card-content"&gt;
+&lt;div id="profile"&gt;
+&lt;span class="avatar"&gt;
+   &lt;span class="typicons-user icon"&gt;&lt;/span&gt;
+      &lt;span class="info"&gt;
+         Naem Azam 
+         &lt;br /&gt;
+         naemazam@mail.com
+       &lt;/span&gt;
+     &lt;/span&gt;
+  &lt;/div&gt;
+    &lt;div id="options"&gt;
+     &lt;ul&gt;
+      &lt;li&gt;&lt;span class="typicons-anchor icon"&gt;&lt;/span&gt;WEBSITE&lt;/li&gt;
+      &lt;li&gt;&lt;span class="typicons-export icon"&gt;&lt;/span&gt;SHARE&lt;/li&gt;
+       &lt;li&gt;&lt;span class="typicons-plus icon"&gt;&lt;/span&gt;FOLLOW&lt;/li&gt;
+      &lt;li&gt;&lt;span class="typicons-tab icon"&gt;&lt;/span&gt;HIRE&lt;/li&gt;
+     &lt;/ul&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+  &lt;div id="side-bar"&gt;
+    &lt;ul&gt;
+     &lt;li&gt;&lt;span class="typicons-user icon"&gt;&lt;/span&gt;PROFILE&lt;/li&gt;
+     &lt;li&gt;&lt;span class="typicons-list icon"&gt;&lt;/span&gt;PROJECTS&lt;/li&gt;
+     &lt;li&gt;&lt;span class="typicons-spanner icon"&gt;&lt;/span&gt;SKILLS&lt;/li&gt;
+      
+   &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="css">
+/*predefined CSS, but editable*/
+
+@import url(https://weloveiconfonts.com/api/?family=typicons);
+@import url(https://fonts.googleapis.com/css?family=Exo:500,700);
+
+/* typicons */
+[class*="typicons-"]:before {
+  font-family: 'Typicons', sans-serif;
+}
+
+body {
+ background-image: radial-gradient(circle farthest-corner at center, #606060 20%, #414141 100%);
+}
+#vcard {
+  margin: 0 auto;
+  width: 600px;
+  height: 350px;
+  background: #31A66C;
+  border-radius: 4px;
+  box-shadow: 0px 5px 15px rgba(0,0,0, .3);
+}
+#card-content {
+  width: 500px;
+  float: left;
+  height: 100%;
+  
+}
+#side-bar {
+  width: 100px;
+  float: left;
+  background: #fff;
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+  box-shadow: -5px 0px 15px rgba(0,0,0, .3);
+}
+#profile {
+  height: 200px;
+  border-bottom: solid 1px rgba(255,255,255,.2);
+}
+#options ul {
+  margin: 0;
+  padding: 0;
+}
+#options ul li{
+  text-align: center;
+  font-family: Exo;
+  font-size: 14px;
+  color: white;
+  list-style-type: none;
+  display: inline-block;
+  float: left;
+  width: 123px;
+  height: 100px;
+  border-right: solid 1px rgba(255,255,255,.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,.3);
+}
+#options ul li:last-child{
+
+  border-right: none;
+}
+#options ul li span.icon {
+  display: block;
+  margin-top: 25px;
+  color: white;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+#side-bar ul {
+  margin: 0;
+  padding: 0;
+}
+#side-bar ul li{
+  
+  text-align: center;
+  font-family: Exo;
+  font-size: 12px;
+  color: #414141;
+  list-style-type: none;
+  display: inline-block;
+  float: left;
+  width: 100px;
+  height: 115px;
+  border-bottom: solid 1px #eaeaea;
+  
+}
+#side-bar ul li:last-child{
+
+  border-bottom: none;
+}
+#side-bar ul li span.icon {
+  display: block;
+  margin-top: 25px;
+  color: #414141;
+  font-size: 36px;
+  line-height: 32px;
+}
+
+#profile {
+  padding-top: 50px;
+  text-align: center;
+  overflow: hidden;
+}
+span.avatar span.icon{
+  display: inline-block;
+  color: #414141;
+  font-size: 72px;
+  line-height: 100px;
+  background: #46af7b;
+  border: solid 3px rgba(255,255,255, .2);
+  overflow: hidden;
+  padding-top: 1px;
+  width: 90px;
+  height: 90px;
+  border-radius: 46px;
+}
+span.info {
+  padding-top: 10px;
+  display: block;
+  font-family: Exo;
+  font-size: 18px;
+  color: rgba(255,255,255, .7);
+  font-weight: normal;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.3);
+}
+
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="js">
+//predefined JavaScript, but editable
+
+
+
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <iframe id="result"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="description">
+    <p> A simple gift for my font-end Devloper Friends, It's a Html CSS and javascript  live editor With live demo </p>
+	 
+ </div>
+  <div class="footer">
+    <div class="inner-wrap">
+      <p>&#169; <span>Copyright 2023  Naem Azam </span> </p>
+      <div class="icons-wrap">
+       
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
